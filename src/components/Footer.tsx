@@ -6,7 +6,7 @@ export default function Footer() {
           <span>Korean Services Integration Kit</span>
           <span>•</span>
           <a
-            href="https://github.com"
+            href="https://github.com/crowrish/korean-services-intergration-kit"
             className="hover:text-gray-700 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
