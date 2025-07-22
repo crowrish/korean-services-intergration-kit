@@ -8,6 +8,7 @@ import Link from 'next/link';
 import ApiKeyInput from '@/components/ApiKeyInput';
 import CodeBlock from '@/components/CodeBlock';
 import LiveDemo from '@/components/LiveDemo';
+import { getImagePath } from '@/lib/image-utils';
 import { channelTalkExamples } from '@/lib/code-examples/channeltalk';
 import {
   initializeChannelTalk,
@@ -87,7 +88,7 @@ export default function ChannelTalkPage() {
           <div className="flex items-center space-x-4 mb-4">
             <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
               <Image
-                src="/logos/channeltalk.png"
+                src={getImagePath('/logos/channeltalk.png')}
                 alt="Channel Talk logo"
                 width={40}
                 height={40}

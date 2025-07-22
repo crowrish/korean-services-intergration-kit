@@ -8,6 +8,7 @@ import Link from 'next/link';
 import ApiKeyInput from '@/components/ApiKeyInput';
 import CodeBlock from '@/components/CodeBlock';
 import LiveDemo from '@/components/LiveDemo';
+import { getImagePath } from '@/lib/image-utils';
 import { tossPaymentsExamples } from '@/lib/code-examples/tosspayments';
 import {
   TossPaymentsPaymentData,
@@ -153,7 +154,7 @@ export default function TossPaymentsPage() {
           <div className="flex items-center space-x-4 mb-4">
             <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
               <Image
-                src="/logos/tosspayments.png"
+                src={getImagePath('/logos/tosspayments.png')}
                 alt="TossPayments logo"
                 width={40}
                 height={40}

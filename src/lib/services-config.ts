@@ -1,4 +1,5 @@
 import { ServiceConfig } from '@/types/services';
+import { getImagePath } from './image-utils';
 
 export const services: ServiceConfig[] = [
   {
@@ -6,7 +7,7 @@ export const services: ServiceConfig[] = [
     name: 'Channel Talk',
     description:
       '채널톡 고객상담 채팅 위젯을 웹사이트에 쉽게 통합하고 테스트하세요.',
-    logoUrl: '/logos/channeltalk.png',
+    logoUrl: getImagePath('/logos/channeltalk.png'),
     docsUrl: 'https://developers.channel.io/docs',
     category: 'Communication',
     inputLabel: 'Plugin Key',
@@ -18,7 +19,7 @@ export const services: ServiceConfig[] = [
     name: 'PortOne v1 (아임포트)',
     description:
       'PortOne v1(아임포트) 결제 시스템을 Next.js에 통합하여 간편결제를 테스트하고 구현하세요.',
-    logoUrl: '/logos/portone.png',
+    logoUrl: getImagePath('/logos/portone.png'),
     docsUrl:
       'https://developers.portone.io/opi/ko/integration/start/v1/auth?v=v1',
     category: 'Payment',
@@ -31,7 +32,7 @@ export const services: ServiceConfig[] = [
     name: 'PortOne v2',
     description:
       'PortOne v1 결제 시스템을 Next.js에 통합하여 간편결제를 테스트하고 구현하세요.',
-    logoUrl: '/logos/portone.png',
+    logoUrl: getImagePath('/logos/portone.png'),
     docsUrl:
       'https://developers.portone.io/opi/ko/integration/start/v2/checkout?v=v2',
     category: 'Payment',
@@ -44,7 +45,7 @@ export const services: ServiceConfig[] = [
     name: 'TossPayments',
     description:
       '토스페이먼츠 결제 시스템을 통해 간편하고 안전한 결제 서비스를 테스트하고 구현하세요.',
-    logoUrl: '/logos/tosspayments.png',
+    logoUrl: getImagePath('/logos/tosspayments.png'),
     docsUrl: 'https://docs.tosspayments.com/sdk/v2/js',
     category: 'Payment',
     inputLabel: 'Client Key',

@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 import CodeBlock from '@/components/CodeBlock';
 import LiveDemo from '@/components/LiveDemo';
+import { getImagePath } from '@/lib/image-utils';
 import MultiApiKeyInput from '@/components/MultiApiKeyInput';
 import { portoneV2Examples } from '@/lib/code-examples/portone-v2';
 import {
@@ -144,7 +145,7 @@ export default function PortOneV2Page() {
           <div className="flex items-center space-x-4 mb-4">
             <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
               <Image
-                src="/logos/portone.png"
+                src={getImagePath('/logos/portone.png')}
                 alt="PortOne v2 logo"
                 width={40}
                 height={40}

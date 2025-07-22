@@ -11,6 +11,7 @@ import type { RequestPayResponse } from 'iamport-typings';
 import ApiKeyInput from '@/components/ApiKeyInput';
 import CodeBlock from '@/components/CodeBlock';
 import LiveDemo from '@/components/LiveDemo';
+import { getImagePath } from '@/lib/image-utils';
 import { portoneV1Examples } from '@/lib/code-examples/portone-v1';
 import {
   PaymentData,
@@ -133,7 +134,7 @@ export default function IamportPage() {
             <div className="flex items-center space-x-4 mb-4">
               <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
                 <Image
-                  src="/logos/portone.png"
+                  src={getImagePath('/logos/portone.png')}
                   alt="PortOne logo"
                   width={40}
                   height={40}
