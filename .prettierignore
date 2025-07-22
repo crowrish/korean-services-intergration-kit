@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+build
+dist
+*.md
+package-lock.json
+yarn.lock
+.env*
