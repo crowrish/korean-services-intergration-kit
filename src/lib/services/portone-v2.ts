@@ -45,18 +45,26 @@ let isSDKInitialized = false;
 
 export const validatePortOneV2StoreId = (storeId: string): boolean => {
   if (!storeId || typeof storeId !== 'string') return false;
-  return /^store-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(storeId);
+  return /^store-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+    storeId
+  );
 };
 
 export const validatePortOneV2ChannelKey = (channelKey: string): boolean => {
   if (!channelKey || typeof channelKey !== 'string') return false;
-  return /^channel-key-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(channelKey);
+  return /^channel-key-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+    channelKey
+  );
 };
 
-export const initializePortOneV2 = async (config: PortOneV2Config): Promise<boolean> => {
+export const initializePortOneV2 = async (
+  config: PortOneV2Config
+): Promise<boolean> => {
   try {
     if (typeof window === 'undefined') {
-      console.error('PortOne v2 can only be initialized in browser environment');
+      console.error(
+        'PortOne v2 can only be initialized in browser environment'
+      );
       return false;
     }
 
@@ -77,13 +85,19 @@ export const requestPortOneV2Payment = async (
 
   return new Promise((resolve, reject) => {
     if (!isSDKInitialized) {
-      const error = createError('NOT_INITIALIZED', 'PortOne v2 SDK not initialized');
+      const error = createError(
+        'NOT_INITIALIZED',
+        'PortOne v2 SDK not initialized'
+      );
       onResult?.(error);
       return reject(error);
     }
 
     if (typeof window === 'undefined') {
-      const error = createError('BROWSER_ONLY', 'Payment can only be requested in browser environment');
+      const error = createError(
+        'BROWSER_ONLY',
+        'Payment can only be requested in browser environment'
+      );
       onResult?.(error);
       return reject(error);
     }
@@ -95,7 +109,10 @@ export const requestPortOneV2Payment = async (
         paymentId: paymentData.paymentId,
         orderName: paymentData.orderName,
         totalAmount: paymentData.totalAmount,
-        currency: paymentData.currency === 'KRW' ? Entity.Currency.KRW : Entity.Currency.USD,
+        currency:
+          paymentData.currency === 'KRW'
+            ? Entity.Currency.KRW
+            : Entity.Currency.USD,
         payMethod: paymentData.payMethod,
         customer: paymentData.customer,
       };

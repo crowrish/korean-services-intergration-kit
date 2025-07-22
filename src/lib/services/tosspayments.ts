@@ -31,10 +31,16 @@ let widgetsInstance: unknown = null;
 export const validateTossPaymentsClientKey = (clientKey: string): boolean =>
   clientKey.startsWith('test_gck_') || clientKey.startsWith('live_gck_');
 
-export const initializeTossPayments = async (config: TossPaymentsConfig): Promise<boolean> => {
+export const initializeTossPayments = async (
+  config: TossPaymentsConfig
+): Promise<boolean> => {
   try {
     tossPaymentsInstance = await loadTossPayments(config.clientKey);
-    widgetsInstance = (tossPaymentsInstance as { widgets: (config: { customerKey: string }) => unknown }).widgets({ customerKey: ANONYMOUS });
+    widgetsInstance = (
+      tossPaymentsInstance as {
+        widgets: (config: { customerKey: string }) => unknown;
+      }
+    ).widgets({ customerKey: ANONYMOUS });
     return true;
   } catch (error) {
     console.error('Failed to initialize TossPayments:', error);
@@ -62,19 +68,37 @@ const withWidgetsCheck = async <T extends unknown[]>(
 
 export const setPaymentAmount = (amount: number): Promise<boolean> =>
   withWidgetsCheck(
-    async () => (widgetsInstance as { setAmount: (config: { value: number; currency: string }) => void }).setAmount({ value: amount, currency: 'KRW' }),
+    async () =>
+      (
+        widgetsInstance as {
+          setAmount: (config: { value: number; currency: string }) => void;
+        }
+      ).setAmount({ value: amount, currency: 'KRW' }),
     'Failed to set payment amount:'
   );
 
 export const renderPaymentMethods = (selector: string): Promise<boolean> =>
   withWidgetsCheck(
-    async () => (widgetsInstance as { renderPaymentMethods: (config: { selector: string; variantKey: string }) => void }).renderPaymentMethods({ selector, variantKey: 'DEFAULT' }),
+    async () =>
+      (
+        widgetsInstance as {
+          renderPaymentMethods: (config: {
+            selector: string;
+            variantKey: string;
+          }) => void;
+        }
+      ).renderPaymentMethods({ selector, variantKey: 'DEFAULT' }),
     'Failed to render payment methods:'
   );
 
 export const renderAgreement = (selector: string): Promise<boolean> =>
   withWidgetsCheck(
-    async () => (widgetsInstance as { renderAgreement: (config: { selector: string }) => void }).renderAgreement({ selector }),
+    async () =>
+      (
+        widgetsInstance as {
+          renderAgreement: (config: { selector: string }) => void;
+        }
+      ).renderAgreement({ selector }),
     'Failed to render agreement:'
   );
 
@@ -83,14 +107,26 @@ export const requestTossPayment = async (
   onResult?: (response: TossPaymentsResponse) => void
 ): Promise<void> => {
   if (!widgetsInstance) {
-    const error = { code: 'WIDGET_NOT_INITIALIZED', message: 'TossPayments widgets not initialized' };
+    const error = {
+      code: 'WIDGET_NOT_INITIALIZED',
+      message: 'TossPayments widgets not initialized',
+    };
     onResult?.(error);
     throw new Error(error.message);
   }
 
   try {
     const { origin } = window.location;
-    await (widgetsInstance as { requestPayment: (data: TossPaymentsPaymentData & { successUrl: string; failUrl: string }) => Promise<void> }).requestPayment({
+    await (
+      widgetsInstance as {
+        requestPayment: (
+          data: TossPaymentsPaymentData & {
+            successUrl: string;
+            failUrl: string;
+          }
+        ) => Promise<void>;
+      }
+    ).requestPayment({
       ...paymentData,
       successUrl: `${origin}/tosspayments/success`,
       failUrl: `${origin}/tosspayments/fail`,
@@ -108,11 +144,11 @@ export const requestTossPayment = async (
 };
 
 export const removeTossPayments = (): void => {
-  ['#payment-methods', '#agreement'].forEach(selector => {
+  ['#payment-methods', '#agreement'].forEach((selector) => {
     const el = document.querySelector(selector);
     if (el) el.innerHTML = '';
   });
-  
+
   tossPaymentsInstance = null;
   widgetsInstance = null;
 };

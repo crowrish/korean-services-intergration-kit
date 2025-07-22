@@ -28,7 +28,9 @@ export default function PortOneV2Page() {
   const [isPaymentLoading, setIsPaymentLoading] = useState(false);
   const [productName, setProductName] = useState('테스트 상품');
   const [amount, setAmount] = useState('1000');
-  const [payMethod, setPayMethod] = useState<'CARD' | 'VIRTUAL_ACCOUNT' | 'TRANSFER'>('CARD');
+  const [payMethod, setPayMethod] = useState<
+    'CARD' | 'VIRTUAL_ACCOUNT' | 'TRANSFER'
+  >('CARD');
   const [paymentResult, setPaymentResult] = useState<PortOneV2Response | null>(
     null
   );
@@ -39,7 +41,12 @@ export default function PortOneV2Page() {
     };
   }, []);
 
-  const handleValueChange = (setter: (v: string) => void, validator: (v: string) => boolean, validSetter: (v: boolean) => void) => 
+  const handleValueChange =
+    (
+      setter: (v: string) => void,
+      validator: (v: string) => boolean,
+      validSetter: (v: boolean) => void
+    ) =>
     (value: string) => {
       setter(value);
       validSetter(validator(value));
@@ -49,11 +56,22 @@ export default function PortOneV2Page() {
       }
     };
 
-  const handleStoreIdChange = handleValueChange(setStoreId, validatePortOneV2StoreId, setIsStoreIdValid);
-  const handleChannelKeyChange = handleValueChange(setChannelKey, validatePortOneV2ChannelKey, setIsChannelKeyValid);
+  const handleStoreIdChange = handleValueChange(
+    setStoreId,
+    validatePortOneV2StoreId,
+    setIsStoreIdValid
+  );
+  const handleChannelKeyChange = handleValueChange(
+    setChannelKey,
+    validatePortOneV2ChannelKey,
+    setIsChannelKeyValid
+  );
 
   const handleStartTest = async () => {
-    if (validatePortOneV2StoreId(storeId) && validatePortOneV2ChannelKey(channelKey)) {
+    if (
+      validatePortOneV2StoreId(storeId) &&
+      validatePortOneV2ChannelKey(channelKey)
+    ) {
       setIsActive(await initializePortOneV2({ storeId, channelKey }));
     }
   };
@@ -251,7 +269,9 @@ export default function PortOneV2Page() {
                     <select
                       id="payMethod"
                       value={payMethod}
-                      onChange={(e) => setPayMethod(e.target.value as typeof payMethod)}
+                      onChange={(e) =>
+                        setPayMethod(e.target.value as typeof payMethod)
+                      }
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     >
                       <option value="CARD">신용카드</option>
@@ -340,12 +360,16 @@ export default function PortOneV2Page() {
                 </div>
 
                 <div className="mb-4">
-                  <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                    !paymentResult.code || paymentResult.code === '0'
-                      ? 'bg-green-100 text-green-800'
-                      : 'bg-red-100 text-red-800'
-                  }`}>
-                    {!paymentResult.code || paymentResult.code === '0' ? '✅ 결제 성공' : '❌ 결제 실패'}
+                  <div
+                    className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                      !paymentResult.code || paymentResult.code === '0'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-red-100 text-red-800'
+                    }`}
+                  >
+                    {!paymentResult.code || paymentResult.code === '0'
+                      ? '✅ 결제 성공'
+                      : '❌ 결제 실패'}
                   </div>
                 </div>
 

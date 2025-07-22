@@ -28,7 +28,8 @@ export default function TossPaymentsPage() {
   const [amount, setAmount] = useState('50000');
   const [customerName, setCustomerName] = useState('김토스');
   const [customerEmail, setCustomerEmail] = useState('test@example.com');
-  const [paymentResult, setPaymentResult] = useState<TossPaymentsResponse | null>(null);
+  const [paymentResult, setPaymentResult] =
+    useState<TossPaymentsResponse | null>(null);
   const [widgetsRendered, setWidgetsRendered] = useState(false);
 
   const paymentMethodsRef = useRef<HTMLDivElement>(null);
@@ -52,7 +53,10 @@ export default function TossPaymentsPage() {
 
   const handleStartTest = async () => {
     if (clientKey.trim()) {
-      const success = await initializeTossPayments({ clientKey, customerKey: 'customer-' + Date.now() });
+      const success = await initializeTossPayments({
+        clientKey,
+        customerKey: 'customer-' + Date.now(),
+      });
       if (success) {
         setIsActive(true);
         await renderPaymentWidgets();
@@ -65,7 +69,7 @@ export default function TossPaymentsPage() {
       await Promise.all([
         setPaymentAmount(parseInt(amount)),
         renderPaymentMethods('#payment-methods'),
-        renderAgreement('#agreement')
+        renderAgreement('#agreement'),
       ]);
       setWidgetsRendered(true);
     } catch (error) {
