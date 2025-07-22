@@ -30,13 +30,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
-
+      - name: Show Next.js config
+        run: cat next.config.ts
+        
       - name: Build with Next.js
         run: npm run build
+        env:
+          NODE_ENV: production
+        
+      - name: List all files after build
+        run: find . -name "out" -type d || echo "No out directory found"
+        
+      - name: Check build output directories
+        run: ls -la .next/ || echo ".next not found" && ls -la out/ || echo "out not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
