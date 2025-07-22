@@ -2,6 +2,8 @@
 
 한국 웹 서비스들을 Next.js에 쉽게 통합하고 테스트할 수 있는 개발자 도구입니다. 🔑API 키만 준비하세요!
 
+🌐 **Live Demo**: https://crowrish.github.io/korean-services-intergration-kit/
+
 ## 🚀 주요 기능
 
 - **실시간 테스트**: API 키만 입력하면 즉시 서비스 연동 테스트 가능
@@ -12,8 +14,16 @@
 
 - **Channel Talk**: 고객상담 채팅 위젯 통합
 - **PortOne v1 (아임포트)**: 기존 아임포트 결제 시스템
-- **PortOne v2**: 차세대 PortOne 결제 API
+- **PortOne v2**: PortOne v2 결제 API
 - **TossPayments**: 토스페이먼츠 결제 위젯
+
+## 🔗 관련 링크
+
+- [Channel Talk 개발자 문서](https://developers.channel.io/docs)
+- [PortOne 개발자 문서](https://developers.portone.io/)
+- [TossPayments 개발자 문서](https://docs.tosspayments.com/)
+- [Next.js 공식 문서](https://nextjs.org/docs)
+- [아임포트 TypeScript 타입 정의](https://github.com/junhoyeo/iamport-typings)
 
 ## 🔧 사용 방법
 
@@ -136,13 +146,6 @@ npm run format:check
 ## 📄 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
-
-## 🔗 관련 링크
-
-- [Channel Talk 개발자 문서](https://developers.channel.io/docs)
-- [PortOne 개발자 문서](https://developers.portone.io/)
-- [TossPayments 개발자 문서](https://docs.tosspayments.com/)
-- [Next.js 공식 문서](https://nextjs.org/docs)
 
 ## ⭐ 지원
 
