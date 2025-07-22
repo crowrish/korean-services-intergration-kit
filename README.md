@@ -100,52 +100,9 @@ npm run dev
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-## 🏗 프로젝트 구조
-
-```
-src/
-├── app/                    # Next.js App Router 페이지
-│   ├── channeltalk/       # Channel Talk 페이지
-│   ├── portone-v1/        # PortOne v1 페이지
-│   ├── portone-v2/        # PortOne v2 페이지
-│   └── tosspayments/      # TossPayments 페이지
-├── components/            # 재사용 가능한 컴포넌트
-│   ├── ApiKeyInput.tsx    # API 키 입력 컴포넌트
-│   ├── CodeBlock.tsx      # 코드 블록 컴포넌트
-│   ├── LiveDemo.tsx       # 실시간 데모 컴포넌트
-│   └── ServiceCard.tsx    # 서비스 카드 컴포넌트
-├── lib/                   # 라이브러리 및 유틸리티
-│   ├── services/          # 각 서비스 SDK 래퍼
-│   ├── code-examples/     # 서비스별 코드 예제
-│   └── services-config.ts # 서비스 설정
-└── types/                 # TypeScript 타입 정의
-```
-
-## 💻 개발 명령어
-
-```bash
-# 개발 서버 실행 (Turbopack 활성화)
-npm run dev
-
-# 프로덕션 빌드
-npm run build
-
-# 프로덕션 서버 실행
-npm run start
-
-# ESLint 실행
-npm run lint
-
-# Prettier 포맷팅
-npm run format
-
-# 포맷 체크
-npm run format:check
-```
-
 ## 📄 라이선스
 
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+MIT License
 
 ## ⭐ 지원
 
