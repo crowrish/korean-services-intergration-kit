@@ -8,7 +8,7 @@
 
 - **실시간 테스트**: API 키만 입력하면 즉시 서비스 연동 테스트 가능
 - **코드 예제 제공**: 각 서비스별 구현 예제와 문서
-- **Next.js 최적화**: App Router, next/script 적용
+- **Next.js 최적화**: next/script 적용
 
 ## 📦 지원하는 기능
 
@@ -22,10 +22,10 @@
 
 - [Channel Talk 개발자 문서](https://developers.channel.io/docs)
 - [PortOne 개발자 문서](https://developers.portone.io/)
-- [TossPayments 개발자 문서](https://docs.tosspayments.com/)
-- [Next.js 공식 문서](https://nextjs.org/docs)
 - [아임포트 TypeScript 타입 정의](https://github.com/junhoyeo/iamport-typings)
-- [카카오 디벨로퍼스 JavScript](https://developers.kakao.com/docs/latest/ko/javascript/getting-started)
+- [TossPayments 개발자 문서](https://docs.tosspayments.com/)
+- [카카오 디벨로퍼스](https://developers.kakao.com/docs/latest/ko/javascript/getting-started)
+- [Next.js 공식 문서](https://nextjs.org/docs)
 
 ## 🔧 사용 방법
 
