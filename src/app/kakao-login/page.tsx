@@ -494,11 +494,19 @@ export default function KakaoLoginPage() {
               카카오 JavaScript SDK를 로드하고 초기화하는 방법입니다.
             </p>
 
-            <CodeBlock
-              title="HTML에 SDK 추가"
-              language="javascript"
-              code={kakaoExamples.sdkInstall}
-            />
+            <div className="space-y-4">
+              <CodeBlock
+                title="HTML 스크립트 방식"
+                language="html"
+                code={kakaoExamples.htmlScript}
+              />
+
+              <CodeBlock
+                title="Next.js Script 컴포넌트 방식 (권장)"
+                language="tsx"
+                code={kakaoExamples.nextjsScript}
+              />
+            </div>
           </div>
 
           {/* 공식 로그인 구현 */}
