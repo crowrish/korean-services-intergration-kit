@@ -30,6 +30,7 @@ declare global {
 export default function KakaoLoginPage() {
   const [appKey, setAppKey] = useState('');
   const [isKakaoReady, setIsKakaoReady] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState('');
   const [loginResult, setLoginResult] = useState<{
     type: 'success' | 'error' | 'info';
     data: Record<string, unknown>;
@@ -39,8 +40,12 @@ export default function KakaoLoginPage() {
     setIsKakaoReady(true);
   };
 
-  // 페이지 로드 시 URL에서 authorization code 확인
+  // 페이지 로드 시 URL에서 authorization code 확인 및 현재 URL 설정
   useEffect(() => {
+    // 현재 URL 설정 (쿼리 파라미터 제외, 트레일링 슬래시 제거)
+    const baseUrl = window.location.href.split('?')[0].replace(/\/$/, '');
+    setCurrentUrl(baseUrl);
+
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     const error = urlParams.get('error');
@@ -88,7 +93,7 @@ export default function KakaoLoginPage() {
     try {
       // 공식 SDK 방식 - 현재 페이지가 리다이렉트됨
       window.Kakao.Auth.authorize({
-        redirectUri: window.location.origin + '/kakao-login'
+        redirectUri: window.location.href.split('?')[0].replace(/\/$/, '') // 현재 전체 URL (쿼리 파라미터 제외, 트레일링 슬래시 제거)
       });
       
     } catch (err) {
@@ -143,7 +148,8 @@ export default function KakaoLoginPage() {
       }
 
       // 인증 URL 생성
-      const authUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${appKey}&redirect_uri=${encodeURIComponent(window.location.origin + '/kakao-login')}&response_type=code`;
+      const currentUrl = window.location.href.split('?')[0].replace(/\/$/, ''); // 현재 전체 URL (쿼리 파라미터 제외, 트레일링 슬래시 제거)
+      const authUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${appKey}&redirect_uri=${encodeURIComponent(currentUrl)}&response_type=code`;
       
       // 팝업에서 인증 페이지로 이동
       setTimeout(() => {
@@ -393,16 +399,22 @@ export default function KakaoLoginPage() {
                     
                     <div className="space-y-2 mb-3">
                       <div>
-                        <p className="text-xs text-gray-600 mb-1">GitHub Pages 에서 접속중이라면:</p>
+                        <p className="text-xs text-gray-600 mb-1">현재 페이지 URL (권장):</p>
                         <div className="bg-gray-100 p-2 rounded text-xs font-mono break-all">
-                          https://crowrish.github.io/korean-services-intergration-kit/kakao-login/
+                          {currentUrl || '[현재페이지URL]'}
                         </div>
+                        <p className="text-xs text-gray-500 mt-1">💡 이 URL을 복사해서 사용하면 모든 환경에서 작동합니다</p>
                       </div>
 
                       <div>
-                        <p className="text-xs text-gray-600 mb-1">로컬 개발용이라면:</p>
-                        <div className="bg-gray-100 p-2 rounded text-xs font-mono break-all">
-                          http://localhost:3000/kakao-login/
+                        <p className="text-xs text-gray-600 mb-1">또는 수동으로 등록:</p>
+                        <div className="space-y-1">
+                          <div className="bg-gray-100 p-2 rounded text-xs font-mono break-all">
+                            http://localhost:3000/kakao-login
+                          </div>
+                          <div className="bg-gray-100 p-2 rounded text-xs font-mono break-all">
+                            https://crowrish.github.io/korean-services-intergration-kit/kakao-login
+                          </div>
                         </div>
                       </div>
                     </div>
