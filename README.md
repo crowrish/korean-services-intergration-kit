@@ -12,10 +12,11 @@
 
 ## 📦 지원하는 기능
 
-- **Channel Talk**: 고객상담 채팅 위젯 통합
+- **Channel Talk**: 고객상담 채팅 위젯
 - **PortOne v1 (아임포트)**: 기존 아임포트 결제 시스템
-- **PortOne v2**: PortOne v2 결제 API
+- **PortOne v2**: PortOne v2 결제 시스템
 - **TossPayments**: 토스페이먼츠 결제 위젯
+- **Kakao Login**: 카카오 로그인
 
 ## 🔗 관련 링크
 
@@ -24,6 +25,7 @@
 - [TossPayments 개발자 문서](https://docs.tosspayments.com/)
 - [Next.js 공식 문서](https://nextjs.org/docs)
 - [아임포트 TypeScript 타입 정의](https://github.com/junhoyeo/iamport-typings)
+- [카카오 디벨로퍼스 JavScript](https://developers.kakao.com/docs/latest/ko/javascript/getting-started)
 
 ## 🔧 사용 방법
 
@@ -50,6 +52,11 @@
 1. [TossPayments](https://www.tosspayments.com) 가맹점 계정 생성
 2. Client Key 확인
 3. 결제 위젯으로 테스트
+
+#### Kakao Login
+1. [카카오 디벨로퍼스](https://developers.kakao.com) 계정 생성 및 앱 등록
+2. JavaScript Key 확인 및 플랫폼 등록 (웹 도메인)
+3. Redirect URI 등록 후 로그인 테스트 (공식/팝업 방식)
 
 ## 🐛 문제 해결
 
