@@ -12,20 +12,29 @@ export default function ServiceCard({ service }: ServiceCardProps) {
     Communication: 'bg-purple-100 text-purple-800',
     Social: 'bg-yellow-100 text-yellow-800',
     Map: 'bg-red-100 text-red-800',
+    Authentication: 'bg-yellow-100 text-yellow-800',
+  };
+
+  // 서비스별 로고 배경색 설정
+  const getLogoBgColor = () => {
+    if (service.name === 'Kakao Login') {
+      return 'bg-[#FDDC3F]';
+    }
+    return 'bg-white';
   };
 
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-2 shadow-sm">
+          <div className={`w-12 h-12 ${getLogoBgColor()} border border-gray-200 rounded-lg flex items-center justify-center p-2 shadow-sm`}>
             {service.logoUrl ? (
               <Image
                 src={service.logoUrl}
                 alt={`${service.name} logo`}
                 width={32}
                 height={32}
-                className="object-contain"
+                className="object-contain rounded"
               />
             ) : (
               <span className="text-xl font-bold text-gray-600">

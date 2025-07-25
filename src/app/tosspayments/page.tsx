@@ -152,23 +152,23 @@ export default function TossPaymentsPage() {
           </Link>
 
           <div className="flex items-center space-x-4 mb-4">
-            <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
+            <div className="w-16 h-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
               <Image
                 src={getImagePath('/logos/tosspayments.png')}
                 alt="TossPayments logo"
                 width={40}
                 height={40}
-                className="object-contain"
+                className="object-contain rounded"
               />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">TossPayments</h1>
-              <p className="text-gray-600">토스페이먼츠 결제 시스템 통합</p>
+              <h1 className="text-3xl font-bold text-gray-900">토스페이먼츠 TossPayments</h1>
+              <p className="text-gray-600">토스페이먼츠 결제 위젯</p>
             </div>
           </div>
 
           <p className="text-gray-700 max-w-3xl">
-            토스페이먼츠는 한국의 대표적인 간편결제 서비스입니다. Client Key를
+            토스페이먼츠 간편결제 서비스입니다. Client Key를
             입력하면 실제 결제 위젯을 테스트해볼 수 있습니다.
           </p>
 

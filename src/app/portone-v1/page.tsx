@@ -132,24 +132,23 @@ export default function IamportPage() {
             </Link>
 
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
+              <div className="w-16 h-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
                 <Image
                   src={getImagePath('/logos/portone.png')}
                   alt="PortOne logo"
                   width={40}
                   height={40}
-                  className="object-contain"
+                  className="object-contain rounded"
                 />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">PortOne v1</h1>
-                <p className="text-gray-600">PortOne v1 결제 시스템 통합</p>
+                <h1 className="text-3xl font-bold text-gray-900">포트원(아임포트) v1 PortOne(Iamport) v1</h1>
+                <p className="text-gray-600">PortOne/Iamport v1 결제 시스템</p>
               </div>
             </div>
 
             <p className="text-gray-700 max-w-3xl">
-              PortOne v1은 한국의 주요 온라인 결제 서비스입니다. v2와는 별도의
-              서비스이며, Merchant ID를 입력하면 실제 결제 모듈을 테스트해볼 수
+              포트원(아임포트) v1은 통합 PG 결제 서비스입니다. Merchant ID를 입력하면 실제 결제 모듈을 테스트해볼 수
               있습니다.
             </p>
 

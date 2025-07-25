@@ -4,7 +4,7 @@ export interface ServiceConfig {
   description: string;
   logoUrl: string;
   docsUrl: string;
-  category: 'Payment' | 'Analytics' | 'Communication' | 'Social' | 'Map';
+  category: 'Payment' | 'Analytics' | 'Communication' | 'Social' | 'Map' | 'Authentication';
   inputLabel: string;
   inputPlaceholder: string;
   route: string;

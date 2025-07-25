@@ -28,7 +28,13 @@ export const onScriptLoad = () => {
 export const cleanupIamport = () => {
   isInitialized = false;
   if (window.IMP) {
-    delete (window as unknown as Record<string, unknown>).IMP;
+    try {
+      // undefined로 설정하여 안전하게 정리
+      (window as unknown as Record<string, unknown>).IMP = undefined;
+    } catch (error) {
+      // 속성 설정이 실패해도 무시 (읽기 전용 속성일 수 있음)
+      console.warn('Could not cleanup IMP from window object:', error);
+    }
   }
 };
 

@@ -86,18 +86,18 @@ export default function ChannelTalkPage() {
           </Link>
 
           <div className="flex items-center space-x-4 mb-4">
-            <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
+            <div className="w-16 h-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
               <Image
                 src={getImagePath('/logos/channeltalk.png')}
                 alt="Channel Talk logo"
                 width={40}
                 height={40}
-                className="object-contain"
+                className="object-contain rounded"
               />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Channel Talk</h1>
-              <p className="text-gray-600">채널톡 고객상담 채팅 위젯 통합</p>
+              <h1 className="text-3xl font-bold text-gray-900">채널톡 Channel Talk</h1>
+              <p className="text-gray-600">채널톡 고객상담 채팅 서비스</p>
             </div>
           </div>
 

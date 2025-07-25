@@ -143,17 +143,17 @@ export default function PortOneV2Page() {
           </Link>
 
           <div className="flex items-center space-x-4 mb-4">
-            <div className="w-16 h-16 bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
+            <div className="w-16 h-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center p-3 shadow-sm">
               <Image
                 src={getImagePath('/logos/portone.png')}
                 alt="PortOne v2 logo"
                 width={40}
                 height={40}
-                className="object-contain"
+                className="object-contain rounded"
               />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">PortOne v2</h1>
+              <h1 className="text-3xl font-bold text-gray-900">포트원 v2 PortOne v2</h1>
               <p className="text-gray-600">
                 차세대 PortOne v2 결제 시스템 통합
               </p>
@@ -161,8 +161,7 @@ export default function PortOneV2Page() {
           </div>
 
           <p className="text-gray-700 max-w-3xl">
-            PortOne v2는 최신 결제 API로 더 나은 개발자 경험과 안정성을
-            제공합니다. Store ID와 Channel Key를 입력하면 실제 결제 모듈을
+            PortOne v2 통합 PG 서비스입니다. Store ID와 Channel Key를 입력하면 실제 결제 모듈을
             테스트해볼 수 있습니다.
           </p>
 
