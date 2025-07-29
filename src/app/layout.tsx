@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
+import localFont from 'next/font/local';
 
 import type { Metadata } from 'next';
 
@@ -6,14 +7,18 @@ import Footer from '@/components/Footer';
 
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const pretendard = localFont({
+  src: '../styles/fonts/PretendardVariable.woff2',
+  variable: '--font-pretendard',
+  weight: '45 920',
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const pretendardMono = localFont({
+  src: '../styles/fonts/PretendardVariable.woff2',
+  variable: '--font-pretendard-mono',
+  weight: '45 920',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -29,6 +34,8 @@ export const metadata: Metadata = {
     'TossPayments',
     'PortOne',
     'ChannelTalk',
+    '카카오 로그인',
+    'Kakao Login'
   ],
 };
 
@@ -38,12 +45,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${pretendard.variable} ${pretendardMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <main className="flex-grow">{children}</main>
         <Footer />
+        <GoogleTagManager gtmId="GTM-KQHLJLS6" />
       </body>
     </html>
   );

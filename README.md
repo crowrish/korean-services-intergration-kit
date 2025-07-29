@@ -1,4 +1,4 @@
-# Korean Services Integration Kit
+# Korean Services Integration Kit for Next.js
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
 

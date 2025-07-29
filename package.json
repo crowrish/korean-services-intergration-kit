@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@channel.io/channel-web-sdk-loader": "^2.0.0",
+    "@next/third-parties": "^15.4.4",
     "@portone/browser-sdk": "^0.0.23",
     "@tosspayments/tosspayments-sdk": "^2.3.5",
     "@types/react-syntax-highlighter": "^15.5.13",
