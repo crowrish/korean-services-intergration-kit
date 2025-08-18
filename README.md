@@ -9,13 +9,13 @@
 
 🌐 **Live Demo**: https://crowrish.github.io/korean-services-intergration-kit/
 
-## 🚀 주요 기능
+## 주요 기능
 
 - **실시간 테스트**: API 키만 입력하면 즉시 서비스 연동 테스트 가능
 - **코드 예제 제공**: 각 서비스별 구현 예제와 문서
 - **Next.js 최적화**: next/script 적용
 
-## 📦 지원하는 기능
+## 지원하는 기능
 
 - **Channel Talk**: 고객상담 채팅 위젯
 - **PortOne v1 (아임포트)**: 기존 아임포트 결제 시스템
@@ -23,7 +23,7 @@
 - **TossPayments**: 토스페이먼츠 결제 위젯
 - **Kakao Login**: 카카오 로그인
 
-## 🔗 관련 링크
+## 관련 링크
 
 - [Channel Talk 개발자 문서](https://developers.channel.io/docs)
 - [PortOne 개발자 문서](https://developers.portone.io/)
@@ -32,7 +32,7 @@
 - [카카오 디벨로퍼스](https://developers.kakao.com/docs/latest/ko/javascript/getting-started)
 - [Next.js 공식 문서](https://nextjs.org/docs)
 
-## 🔧 사용 방법
+## 사용 방법
 
 ### 각 서비스별 설정
 
@@ -63,7 +63,7 @@
 2. JavaScript Key 확인 및 플랫폼 등록 (웹 도메인)
 3. Redirect URI 등록 후 로그인 테스트 (공식/팝업 방식)
 
-## 🐛 문제 해결
+## 문제 해결
 
 ### 자주 발생하는 문제
 
@@ -84,12 +84,12 @@
 - **Code Quality**: ESLint, Prettier
 - **Package Manager**: npm
 
-## 📋 시스템 요구사항
+## 시스템 요구사항
 
 - Node.js 18.17 이상
 - npm 9 이상
 
-## ⚡ 빠른 시작
+## 빠른 시작
 
 ### 1. 저장소 클론
 
@@ -112,11 +112,11 @@ npm run dev
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-## 📄 라이선스
+## 라이선스
 
 MIT License
 
-## ⭐ 지원
+## 지원
 
 이 프로젝트가 도움이 되었다면 ⭐를 눌러주세요!
 
