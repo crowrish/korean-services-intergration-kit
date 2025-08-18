@@ -1,9 +1,9 @@
 # Korean Services Integration Kit for Next.js
 
-<img width="1200" height="630" alt="og" src="https://github.com/user-attachments/assets/1b4f62c2-f8a5-4938-a342-ae47e500552f" />
-
-
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+
+<img width="1500" height="500" alt="og (1)" src="https://github.com/user-attachments/assets/c0a17d06-e749-44fd-ab51-355335adcfee" />
+
 
 한국의 주요 SaaS들을 Next.js에 쉽게 통합하고 테스트할 수 있는 개발자 도구입니다. 🔑API 키만 준비하세요!
 
